@@ -14,7 +14,7 @@ public class MainMenuState extends State {
 
         super(gsm);
 
-        camera.setToOrtho(false, Game.WIDTH / 2, Game.HEIGTH / 2);
+        camera.setToOrtho(false, Game.WIDTH, Game.HEIGTH);
 
         bg = new Texture("bg.png");
 
@@ -40,7 +40,7 @@ public class MainMenuState extends State {
 
         sb.begin();
 
-        sb.draw(bg, 0, 0, 0, 0, 240, 400, 1, 1, 0, 0, 0, bg.getWidth(), bg.getHeight(), false, false);
+        sb.draw(bg,0,0,Game.WIDTH,Game.HEIGTH);
 
         sb.end();
     }
