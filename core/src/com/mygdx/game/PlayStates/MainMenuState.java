@@ -6,11 +6,11 @@ import com.mygdx.game.Game;
 import com.mygdx.game.States.State;
 import com.mygdx.game.States.StateManager;
 
-public class MainMenuState extends State{
+public class MainMenuState extends State {
 
     private Texture bg;
 
-    public MainMenuState(StateManager gsm){
+    public MainMenuState(StateManager gsm) {
 
         super(gsm);
 
@@ -40,7 +40,7 @@ public class MainMenuState extends State{
 
         sb.begin();
 
-        sb.draw(bg,0,0);
+        sb.draw(bg, 0, 0, 0, 0, 240, 400, 1, 1, 0, 0, 0, bg.getWidth(), bg.getHeight(), false, false);
 
         sb.end();
     }
