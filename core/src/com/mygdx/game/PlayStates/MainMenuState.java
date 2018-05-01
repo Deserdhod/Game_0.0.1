@@ -1,5 +1,6 @@
 package com.mygdx.game.PlayStates;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Game;
@@ -23,6 +24,19 @@ public class MainMenuState extends State {
     @Override
     protected void handle() {
 
+        if (Gdx.input.justTouched()) {
+            vector3.x = Gdx.input.getX();
+            vector3.y = Gdx.input.getY();
+            if (vector3.y >= Game.HEIGTH - 90) {
+                if (vector3.x <= Game.WIDTH / 3)
+                    gsm.push(new /**/ (gsm));//left
+                else if (vector3.x >= Game.WIDTH / 3 * 2)
+                    gsm.push(new /**/ (gsm));//right
+                else
+                    gsm.push(new /**/ (gsm));//centre
+            }
+        }
+
     }
 
     @Override
@@ -40,7 +54,7 @@ public class MainMenuState extends State {
 
         sb.begin();
 
-        sb.draw(bg,0,0,Game.WIDTH,Game.HEIGTH);
+        sb.draw(bg, 0, 0, Game.WIDTH, Game.HEIGTH);
 
         sb.end();
     }
