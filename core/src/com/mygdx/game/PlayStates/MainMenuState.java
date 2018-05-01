@@ -30,23 +30,18 @@ public class MainMenuState extends State {
             if (vector3.y >= Game.HEIGTH - 90) {
                 if (vector3.x <= Game.WIDTH / 3)
                     gsm.push(new FloppState (gsm));//left
-<<<<<<< HEAD
 
-=======
->>>>>>> 7f0b1fc03bc06df6de4458c36799987bd887cdca
                 else if (vector3.x >= Game.WIDTH / 3 * 2)
                     gsm.push(new FloppState (gsm));//right
                 else
                     gsm.push(new FloppState (gsm));//centre
-<<<<<<< HEAD
+
 
                // else if (vector3.x >= Game.WIDTH / 3 * 2)
                     //gsm.push(new FloppState (gsm));//right
              //   else
                    // gsm.push(new /**/ (gsm));//centre
 
-=======
->>>>>>> 7f0b1fc03bc06df6de4458c36799987bd887cdca
             }
         }
 
