@@ -47,12 +47,16 @@ public class GameOverState extends State {
 
         sb.begin();
 
+<<<<<<< HEAD
 
         sb.draw(gameOver, 0, 0, Game.WIDTH, Game.HEIGTH);
 
         sb.draw(gameOver,0,0,Game.WIDTH,Game.HEIGTH);
 
 
+=======
+        sb.draw(gameOver, 0, 0, Game.WIDTH, Game.HEIGTH);
+>>>>>>> 7f0b1fc03bc06df6de4458c36799987bd887cdca
 
         sb.end();
 
