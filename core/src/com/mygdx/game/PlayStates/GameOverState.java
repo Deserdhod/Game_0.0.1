@@ -47,7 +47,7 @@ public class GameOverState extends State {
 
         sb.begin();
 
-        sb.draw(gameOver,Game.WIDTH,Game.HEIGTH);
+        sb.draw(gameOver, 0, 0, Game.WIDTH, Game.HEIGTH);
 
         sb.end();
 

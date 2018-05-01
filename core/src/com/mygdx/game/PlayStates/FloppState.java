@@ -30,7 +30,7 @@ public class FloppState extends State {
 
         flopp = new Flopp(50, 300);
 
-        camera.setToOrtho(false, Game.WIDTH, Game.HEIGTH );
+        camera.setToOrtho(false, Game.WIDTH / 2, Game.HEIGTH / 2);
 
         background = new Texture("backGround.png");
         ground = new Texture("ground.png");
