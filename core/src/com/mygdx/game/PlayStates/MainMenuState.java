@@ -29,7 +29,7 @@ public class MainMenuState extends State {
             vector3.y = Gdx.input.getY();
             if (vector3.y >= Game.HEIGTH - 90) {
                 if (vector3.x <= Game.WIDTH / 3)
-                    gsm.push(new FloppStartMenuState (gsm));//left
+                    gsm.push(new DropStartMenuState (gsm));//left
 
                 else if (vector3.x >= Game.WIDTH / 3 * 2)
                     gsm.push(new FloppStartMenuState (gsm));//right

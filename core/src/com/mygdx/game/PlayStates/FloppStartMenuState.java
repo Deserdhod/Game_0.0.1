@@ -1,6 +1,7 @@
 package com.mygdx.game.PlayStates;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Game;
@@ -14,13 +15,17 @@ import com.mygdx.game.States.StateManager;
 public class FloppStartMenuState extends State {
     private Texture backGround;
     private Texture playButton;
+    private Music music;
 
     public FloppStartMenuState(StateManager gsm) {
 
         super(gsm);
 
-        camera.setToOrtho(false, Game.WIDTH,Game.HEIGTH);
-
+        camera.setToOrtho(false, Game.WIDTH, Game.HEIGTH);
+       /* music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
+        music.setLooping(true);
+        music.setVolume(0.1f);
+        music.play();*/
         backGround = new Texture("backGround.png");
         playButton = new Texture("playbutton.png");
     }
@@ -49,8 +54,8 @@ public class FloppStartMenuState extends State {
 
         sb.begin();
 
- sb.draw(backGround,0,0,Game.WIDTH,Game.HEIGTH);
-sb.draw(playButton,camera.position.x - playButton.getWidth() / 2, camera.position.y);
+        sb.draw(backGround, 0, 0, Game.WIDTH, Game.HEIGTH);
+        sb.draw(playButton, camera.position.x - playButton.getWidth() / 2, camera.position.y);
         sb.end();
 
     }
@@ -58,6 +63,7 @@ sb.draw(playButton,camera.position.x - playButton.getWidth() / 2, camera.positio
     @Override
     public void dispose() {
 
+        music.dispose();
         backGround.dispose();
         playButton.dispose();
     }
