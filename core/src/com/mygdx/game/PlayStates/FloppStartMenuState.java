@@ -22,10 +22,10 @@ public class FloppStartMenuState extends State {
         super(gsm);
 
         camera.setToOrtho(false, Game.WIDTH, Game.HEIGTH);
-       /* music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
-        music.setLooping(true);
-        music.setVolume(0.1f);
-        music.play();*/
+       // music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
+       // music.setLooping(true);
+       // music.setVolume(0.1f);
+      //  music.play();             //я чет хз на счёт музыки мб в другом скрине её сделать
         backGround = new Texture("backGround.png");
         playButton = new Texture("playbutton.png");
     }
@@ -36,6 +36,8 @@ public class FloppStartMenuState extends State {
         if (Gdx.input.justTouched()) {
 
             gsm.push(new FloppState(gsm));
+
+           // music.stop();
         }
 
     }
