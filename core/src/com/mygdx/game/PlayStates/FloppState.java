@@ -90,7 +90,7 @@ public class FloppState extends State {
                 tube.repos(tube.getPosTopTube().x + ((TUBE_SPASSING + Tube.TUBE_WIDTH) * TUBE_COUNT));
             }
 
-            if (tube.collider(flopp.getRectangleFlopp())) {
+            if ((tube.collider(flopp.getRectangleFlopp())) || (flopp.getPos().y <= 80)) {
                 score = 0;
                 gsm.set(new GameOverState(gsm));
             }
