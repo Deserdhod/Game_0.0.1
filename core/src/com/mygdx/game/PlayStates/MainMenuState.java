@@ -32,7 +32,7 @@ public class MainMenuState extends State {
                     gsm.push(new DropStartMenuState (gsm));//left
 
                 else if (vector3.x >= Game.WIDTH / 3 * 2)
-                    gsm.push(new FloppStartMenuState (gsm));//right
+                    gsm.push(new RunnerStartMenuState (gsm));//right
                 else
                     gsm.push(new FloppStartMenuState (gsm));//centre
 
