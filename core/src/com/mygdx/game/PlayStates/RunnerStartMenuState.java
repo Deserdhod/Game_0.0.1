@@ -10,7 +10,6 @@ import com.mygdx.game.States.StateManager;
 public class RunnerStartMenuState extends State {
 
     private Texture backGround;
-    private Texture playButton;
 
     public RunnerStartMenuState(StateManager gsm) {
 
@@ -18,8 +17,7 @@ public class RunnerStartMenuState extends State {
 
         camera.setToOrtho(false, Game.WIDTH / 2, Game.HEIGTH / 2);
 
-        backGround = new Texture("backGround.png");
-        playButton = new Texture("playbutton.png");
+        backGround = new Texture("rstbg.png");
     }
 
     @Override
@@ -47,7 +45,7 @@ public class RunnerStartMenuState extends State {
         sb.begin();
 
         sb.draw(backGround,0,0);
-        sb.draw(playButton,camera.position.x - playButton.getWidth() / 2, camera.position.y);
+
 
         sb.end();
 
@@ -57,6 +55,6 @@ public class RunnerStartMenuState extends State {
     public void dispose() {
 
         backGround.dispose();
-        playButton.dispose();
+
     }
 }

@@ -23,7 +23,7 @@ public class Runner {
 
         pos = new Vector3(x, y, 0);
         vel = new Vector3(0, 0, 0);
-        texture = new Texture("floppAnimation.png");
+        texture = new Texture("runner.png");
         floppAnim = new Animation(new TextureRegion(texture), 3, 0.5f);
         rectangleFlopp = new Rectangle(x, y, texture.getWidth() / 3, texture.getHeight());
         sound = Gdx.audio.newSound(Gdx.files.internal("sfx_wing.ogg"));

@@ -47,8 +47,8 @@ public class RunnerState extends State {
 
         camera.setToOrtho(false, Game.WIDTH / 2, Game.HEIGTH / 2);
 
-        background = new Texture("backGround.png");
-        ground = new Texture("ground.png");
+        background = new Texture("rbg.png");
+        ground = new Texture("rground.png");
 
         groundPos1 = new Vector2(camera.position.x - camera.viewportWidth / 2, GROUND_Y_OFFSET);
         groundPos2 = new Vector2((camera.position.x - camera.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);

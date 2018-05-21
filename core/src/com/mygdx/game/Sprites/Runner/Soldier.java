@@ -30,7 +30,7 @@ public class Soldier {
 
     public Soldier(float x){
 
-        enemy = new Texture("Bigbadgif.png");
+        enemy = new Texture("re.png");
 
         random = new Random();
 
