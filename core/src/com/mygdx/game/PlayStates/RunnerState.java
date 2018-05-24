@@ -41,7 +41,7 @@ public class RunnerState extends State {
         score = 0;
         coll = false;
 
-        runner = new Runner(50, GROUND);
+        runner = new Runner(80, GROUND);
 
         rectangle = new Rectangle(runner.getPos().x, 0, runner.getPos().x - 20, Game.HEIGTH / 2);
 

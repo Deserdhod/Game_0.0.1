@@ -37,10 +37,10 @@ public class FloppState extends State {
         super(gsm);
 
         a = 0;
-        score = -1;
+        score = 0;
         coll = false;
 
-        flopp = new Flopp(50, 300);
+        flopp = new Flopp(80, 300);
 
         rectangle = new Rectangle(flopp.getPos().x, 0, flopp.getPos().x - 20, Game.HEIGTH / 2);
 
