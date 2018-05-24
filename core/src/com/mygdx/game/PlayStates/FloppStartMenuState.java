@@ -21,7 +21,7 @@ public class FloppStartMenuState extends State {
 
         super(gsm);
 
-        camera.setToOrtho(false, Game.WIDTH, Game.HEIGTH);
+        camera.setToOrtho(false, Game.WIDTH / 2, Game.HEIGTH / 2);
        // music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
        // music.setLooping(true);
        // music.setVolume(0.1f);
@@ -56,7 +56,7 @@ public class FloppStartMenuState extends State {
 
         sb.begin();
 
-        sb.draw(backGround, 0, 0, Game.WIDTH, Game.HEIGTH);
+        sb.draw(backGround, 0, 0, Game.WIDTH / 2, Game.HEIGTH / 2);
         sb.draw(playButton, camera.position.x - playButton.getWidth() / 2, camera.position.y);
         sb.end();
 

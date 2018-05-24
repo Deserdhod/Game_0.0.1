@@ -38,7 +38,7 @@ public class RunnerState extends State {
         super(gsm);
 
         a = 0;
-        score = -1;
+        score = 0;
         coll = false;
 
         runner = new Runner(50, GROUND);
