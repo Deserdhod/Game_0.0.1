@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.Game;
 import com.mygdx.game.Sprites.Runner.Runner;
-import com.mygdx.game.Sprites.Runner.Soldier;
+import com.mygdx.game.Sprites.Runner.Enemy;
 import com.mygdx.game.States.State;
 import com.mygdx.game.States.StateManager;
 
@@ -31,7 +31,7 @@ public class RunnerState extends State {
     private Vector2 groundPos1;
     private Vector2 groundPos2;
 
-    private Array<Soldier> soldiers;
+    private Array<Enemy> soldiers;
 
     public RunnerState(StateManager gsm) {
 
@@ -53,11 +53,11 @@ public class RunnerState extends State {
         groundPos1 = new Vector2(camera.position.x - camera.viewportWidth / 2, GROUND_Y_OFFSET);
         groundPos2 = new Vector2((camera.position.x - camera.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);
 
-        soldiers = new Array<Soldier>();
+        soldiers = new Array<Enemy>();
 
         for (int i = 0; i < ENEMY_COUNT; i++) {
 
-            soldiers.add(new Soldier(i * (ENEMY_SPASSING + Soldier.ENEMY_WIDTH)));
+            soldiers.add(new Enemy(i * (ENEMY_SPASSING + Enemy.ENEMY_WIDTH)));
         }
 
     }
@@ -87,24 +87,24 @@ public class RunnerState extends State {
 
         for (int i = 0; i < soldiers.size; i++) {
 
-            Soldier soldier = soldiers.get(i);
+            Enemy enemy = soldiers.get(i);
 
-            soldier.update(dt);
+            enemy.update(dt);
 
-            if (camera.position.x - (camera.viewportWidth / 2) > soldier.getPosEnemy().x + soldier.getEnemy().getWidth()){
+            if (camera.position.x - (camera.viewportWidth / 2) > enemy.getPosEnemy().x + enemy.getEnemy().getWidth()){
 
-                soldier.repos(soldier.getPosEnemy().x + ((ENEMY_SPASSING + Soldier.ENEMY_WIDTH) * ENEMY_COUNT));
+                enemy.repos(enemy.getPosEnemy().x + ((ENEMY_SPASSING + Enemy.ENEMY_WIDTH) * ENEMY_COUNT));
             }
 
-            if (soldier.collider(runner.getRectangleFlopp())) {
+            if (enemy.collider(runner.getRectangleFlopp())) {
                 score = 0;
                 gsm.set(new GameOverState(gsm));
             }
-            if ((soldier.collider(rectangle)) && !coll) {
+            if ((enemy.collider(rectangle)) && !coll) {
                 score++;
                 coll = true;
             }
-            else if (!soldier.collider(rectangle))
+            else if (!enemy.collider(rectangle))
                 a++;
         }
         if (a == soldiers.size)
@@ -124,9 +124,9 @@ public class RunnerState extends State {
         sb.draw(background, camera.position.x - (camera.viewportWidth / 2), 0);
         sb.draw(runner.getFlopp(), runner.getPos().x, runner.getPos().y);
 
-        for (Soldier soldier : soldiers) {
+        for (Enemy enemy : soldiers) {
 
-            sb.draw(soldier.getEnem(), soldier.getPosEnemy().x, soldier.getPosEnemy().y);
+            sb.draw(enemy.getEnem(), enemy.getPosEnemy().x, enemy.getPosEnemy().y);
 
         }
 
@@ -152,8 +152,8 @@ public class RunnerState extends State {
 
         background.dispose();
         runner.dispose();
-        for (Soldier soldier : soldiers) {
-            soldier.dispose();
+        for (Enemy enemy : soldiers) {
+            enemy.dispose();
         }
         ground.dispose();
     }

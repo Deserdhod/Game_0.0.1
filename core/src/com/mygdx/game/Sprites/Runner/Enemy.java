@@ -8,7 +8,7 @@ import com.mygdx.game.PlayStates.RunnerState;
 
 import java.util.Random;
 
-public class Soldier {
+public class Enemy {
 
     public static final int ENEMY_WIDTH = 48;
 
@@ -28,7 +28,7 @@ public class Soldier {
         return posEnemy;
     }
 
-    public Soldier(float x){
+    public Enemy(float x){
 
         enemy = new Texture("re.png");
 
