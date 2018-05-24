@@ -31,6 +31,7 @@ public class RunnerState extends State {
     private Vector2 groundPos1;
     private Vector2 groundPos2;
 
+
     private Array<Enemy> soldiers;
 
     public RunnerState(StateManager gsm) {
